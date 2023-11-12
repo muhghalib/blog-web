@@ -51,6 +51,10 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        blockquote: {
+          DEFAULT: 'hsl(var(--blockquote))',
+          foreground: 'hsl(var(--blockquote-foreground))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
