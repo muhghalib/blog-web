@@ -3,7 +3,7 @@
 import { Main } from '@/components/ui/main';
 import { Separator } from '@/components/ui/separator';
 import { Flex } from '@/components/ui/flex';
-import { Sidebar } from '@/components/layout/sidebar';
+import { Sidebar } from '@/components/layout/Sidebar';
 
 import { HeaderSection } from '@/components/home/HeaderSection';
 import { BlogListSection } from '@/components/home/BlogListSection';
