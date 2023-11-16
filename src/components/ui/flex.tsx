@@ -37,10 +37,18 @@ export interface FlexProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof flexVariants> {}
 
-export const Flex = ({ align, justify, direction, className, children, ...props }: FlexProps) => {
-  return (
-    <div className={cn(flexVariants({ direction, justify, align }), className)} {...props}>
-      {children}
-    </div>
-  );
-};
+export const Flex = React.forwardRef<HTMLDivElement, FlexProps>(
+  ({ align, justify, direction, className, children, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(flexVariants({ direction, justify, align }), className)}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+Flex.displayName = 'Flex';
