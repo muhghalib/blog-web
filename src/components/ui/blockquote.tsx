@@ -12,10 +12,18 @@ export interface BlockquoteProps
   extends Omit<React.BlockquoteHTMLAttributes<HTMLQuoteElement>, 'color'>,
     VariantProps<typeof blockquoteVariants> {}
 
-export const Blockquote = ({ className, children, ...props }: BlockquoteProps) => {
-  return (
-    <blockquote className={cn(typographyVariants(), blockquoteVariants(), className)} {...props}>
-      “{children}”
-    </blockquote>
-  );
-};
+export const Blockquote = React.forwardRef<HTMLQuoteElement, BlockquoteProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <blockquote
+        ref={ref}
+        className={cn(typographyVariants(), blockquoteVariants(), className)}
+        {...props}
+      >
+        “{children}”
+      </blockquote>
+    );
+  },
+);
+
+Blockquote.displayName = 'Blockquote';
