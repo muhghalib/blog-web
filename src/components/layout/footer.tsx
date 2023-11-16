@@ -77,7 +77,7 @@ export const Footer = () => {
         </Card>
       </Grid>
       <Separator className="w-full" />
-      <Flex className="w-full flex-wrap gap-8" justify="between" align="center">
+      <Flex className="flex-wrap w-full gap-8" justify="between" align="center">
         <Flex direction="col" className="space-y-0.5">
           <Typography size="lg">MetaBlog</Typography>
           <Typography weight="light" size="sm">

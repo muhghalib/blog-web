@@ -26,13 +26,13 @@ export const Navbar = () => {
 
   return (
     <Flex
-      className="w-full py-8 max-w-6xl mx-auto gap-x-10 sticky z-20 bg-background/20 backdrop-blur-sm top-0"
+      className="sticky top-0 z-20 w-full max-w-6xl py-8 mx-auto gap-x-10 bg-background/20 backdrop-blur-sm"
       align="center"
     >
       <Typography size="xl" weight="semibold">
         {NAVBAR_TITLE}
       </Typography>
-      <Flex className="space-x-10 ml-auto">
+      <Flex className="ml-auto space-x-10">
         {NAVBAR_LINK.map(({ label, url }, idx) => {
           return (
             <Typography key={idx}>
