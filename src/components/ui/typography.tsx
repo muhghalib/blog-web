@@ -58,22 +58,18 @@ export interface TypographyProps
   truncate?: false;
 }
 
-export const Typography = ({
-  color,
-  size,
-  weight,
-  align,
-  className,
-  children,
-  truncate = false,
-  ...props
-}: TypographyProps) => {
-  return (
-    <span
-      className={cn(typographyVariants({ color, size, weight, align }), { truncate }, className)}
-      {...props}
-    >
-      {children}
-    </span>
-  );
-};
+export const Typography = React.forwardRef<HTMLSpanElement, TypographyProps>(
+  ({ color, size, weight, align, className, children, truncate = false, ...props }, ref) => {
+    return (
+      <span
+        ref={ref}
+        className={cn(typographyVariants({ color, size, weight, align }), { truncate }, className)}
+        {...props}
+      >
+        {children}
+      </span>
+    );
+  },
+);
+
+Typography.displayName = 'Typography';
