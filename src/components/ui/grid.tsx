@@ -53,10 +53,18 @@ export interface GridProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof gridVariants> {}
 
-export const Grid = ({ cols, sm, md, lg, items, className, children, ...props }: GridProps) => {
-  return (
-    <div className={cn(gridVariants({ items, cols, sm, md, lg }), className)} {...props}>
-      {children}
-    </div>
-  );
-};
+export const Grid = React.forwardRef<HTMLDivElement, GridProps>(
+  ({ cols, sm, md, lg, items, className, children, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(gridVariants({ items, cols, sm, md, lg }), className)}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+Grid.displayName = 'Grid';
