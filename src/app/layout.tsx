@@ -3,7 +3,6 @@ import './global.css';
 
 import { ThemeProvider } from '@/components/provider/ThemeProvider';
 import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +16,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <Navbar />
           {children}
-          <Footer />
         </ThemeProvider>
       </body>
     </html>

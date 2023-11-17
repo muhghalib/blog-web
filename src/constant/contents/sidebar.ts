@@ -23,20 +23,5 @@ export const SIDEBAR_SOCIAL = [
   },
 ];
 
-export const SIDEBAR_INFO = [
-  {
-    label: 'Terms of Use',
-    url: '/terms-of-use',
-  },
-  {
-    label: 'Privacy Policy',
-    url: '/privacy-policy',
-  },
-  {
-    label: 'Cookie Policy',
-    url: '/cookie-policy',
-  },
-];
-
 export const SIDEBAR_ABOUT =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam';

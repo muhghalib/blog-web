@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { Aside } from '../ui/aside';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader } from '../ui/card';
@@ -6,41 +8,47 @@ import { Input } from '../ui/input';
 import { Separator } from '../ui/separator';
 import { Typography } from '../ui/typography';
 
-import { SIDEBAR_ABOUT, SIDEBAR_SOCIAL } from '@/constant/contents/sidebar';
+import { SIDEBAR_ABOUT } from '@/constant/contents/sidebar';
 import { DUMMY_CATEGORIES } from '@/constant/dummy/categories';
 
+import { useSearchParams } from 'next/navigation';
+import { useCreateQueryString } from '@/hooks/useCreateQueryString';
+
 export const Sidebar = () => {
+  const searchParams = useSearchParams();
+  const createQueryString = useCreateQueryString();
+
+  const categoryQuery = searchParams.get('category') || '';
+
   return (
-    <Aside className="hidden w-full max-w-xs pr-6 md:block">
+    <Aside className="hidden w-full max-w-[16rem] lg:max-w-xs pr-6 md:block">
       <Flex direction="col" className="space-y-4">
         <Flex direction="col" className="space-y-2">
-          <Typography weight="semibold" size="lg" color="primary">
+          <Typography weight="semibold" size="lg">
             Category
           </Typography>
           <Flex direction="col" className="space-y-1">
             {DUMMY_CATEGORIES.map(({ id, name }) => {
-              return <Typography key={id}>{name}</Typography>;
-            })}
-          </Flex>
-        </Flex>
-        <Separator />
-        <Flex direction="col" className="space-y-2">
-          <Typography weight="semibold" size="lg" color="primary">
-            Social
-          </Typography>
-          <Flex className="w-full space-x-2" align="center">
-            {SIDEBAR_SOCIAL.map(({ icon }, idx) => {
-              const Icon = icon;
+              const query = createQueryString([{ name: 'category', value: name }]);
 
               return (
-                <Typography key={idx}>
-                  <Icon width={20} height={20} />
-                </Typography>
+                <Link key={id} href={`/home?${query}`}>
+                  <Typography
+                    weight="regular"
+                    className="hover:text-primary"
+                    color={categoryQuery == name ? 'primary' : 'black'}
+                  >
+                    {name}
+                  </Typography>
+                </Link>
               );
             })}
           </Flex>
         </Flex>
         <Separator />
+        <Typography size="sm" weight="light">
+          {SIDEBAR_ABOUT}
+        </Typography>
         <Card className="w-full">
           <CardHeader>
             <Typography>Weekly NewsLetter</Typography>
@@ -55,14 +63,9 @@ export const Sidebar = () => {
             </Button>
           </CardContent>
         </Card>
-        <Flex direction="col" className="space-y-2">
-          <Typography size="sm" weight="light">
-            {SIDEBAR_ABOUT}
-          </Typography>
-          <Typography weight="light" size="sm">
-            © JS Template 2023. All Rights Reserved.
-          </Typography>
-        </Flex>
+        <Typography weight="light" size="sm">
+          © JS Template 2023. All Rights Reserved.
+        </Typography>
       </Flex>
     </Aside>
   );
