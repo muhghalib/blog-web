@@ -10,7 +10,7 @@ import { BlogListSection } from '@/components/home/BlogListSection';
 
 export default function HomePage() {
   return (
-    <Main className="flex flex-col px-12 mt-8 mb-24 space-y-10">
+    <Main className="flex flex-col px-6 mt-8 mb-24 space-y-10 md:px-12">
       <HeaderSection />
       <Separator />
       <Flex>
