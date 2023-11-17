@@ -10,6 +10,8 @@ const buttonVariants = cva(
   {
     variants: {
       color: {
+        default:
+          'data-[variant=filled]:text-foreign-foreground data-[variant=filled]:bg-background data-[variant=outlined]:border-foreign data-[variant=outlined]:border data-[variant=outlined]:hover:bg-background data-[variant=outlined]:hover:text-foreign-foreground data-[variant=link]:text-foreign data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-foreign',
         primary:
           'data-[variant=filled]:text-primary-foreground data-[variant=filled]:bg-primary data-[variant=outlined]:border-primary data-[variant=outlined]:border data-[variant=outlined]:hover:bg-primary data-[variant=outlined]:hover:text-primary-foreground data-[variant=link]:text-primary data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-primary',
         destructive:
@@ -22,7 +24,7 @@ const buttonVariants = cva(
       variant: {
         outlined: '',
         filled: '',
-        link: 'underline-offset-4 hover:underline',
+        link: '!p-0 underline-offset-4 hover:underline',
       },
       size: {
         default: 'h-10 px-4 py-2',
@@ -33,7 +35,7 @@ const buttonVariants = cva(
     },
     defaultVariants: {
       variant: 'filled',
-      color: 'primary',
+      color: 'default',
       size: 'default',
     },
   },
