@@ -6,8 +6,10 @@ import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Flex } from '../ui/flex';
 
 import { Typography } from '../ui/typography';
+import { LoginModal } from '../modals/LoginModal';
 import { Separator } from '../ui/separator';
 import { Button } from '../ui/button';
+import { RegisterModal } from '../modals/RegisterModal';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 
 import { useTheme } from 'next-themes';
@@ -62,12 +64,20 @@ export const NavbarMenu = () => {
             })}
           </Accordion>
           <Flex align="center" className="w-full space-x-6 md:hidden">
-            <Button className="w-full" variant="link">
-              Get started
-            </Button>
-            <Button className="w-full" variant="outlined">
-              Create a blog
-            </Button>
+            <LoginModal
+              trigger={
+                <Button className="w-full" variant="link">
+                  Login
+                </Button>
+              }
+            />
+            <RegisterModal
+              trigger={
+                <Button className="w-full" variant="outlined">
+                  Get started
+                </Button>
+              }
+            />
           </Flex>
           <Separator />
           <Flex className="w-full" align="center" justify="between">

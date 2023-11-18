@@ -7,13 +7,15 @@ import { Typography } from '../ui/typography';
 import { Input } from '../ui/input';
 import { Search } from 'lucide-react';
 import { Button } from '../ui/button';
+import { LoginModal } from '../modals/LoginModal';
+import { NavbarMenu } from './NavbarMenu';
+import { Separator } from '../ui/separator';
+import { RegisterModal } from '../modals/RegisterModal';
 
 import { NAVBAR_LINK, NAVBAR_TITLE } from '@/constant/contents/navbar';
-import { Separator } from '../ui/separator';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useCreateQueryString } from '@/hooks/useCreateQueryString';
-import { NavbarMenu } from './NavbarMenu';
 
 export const Navbar = () => {
   const [router, pathname, searchParams] = [useRouter(), usePathname(), useSearchParams()];
@@ -67,8 +69,8 @@ export const Navbar = () => {
       </Flex>
       <Separator orientation="vertical" className="h-10" />
       <Flex align="center" className="space-x-6 max-md:hidden">
-        <Button variant="link">Get started</Button>
-        <Button variant="outlined">Create a blog</Button>
+        <LoginModal trigger={<Button variant="link">Login</Button>} />
+        <RegisterModal trigger={<Button variant="outlined">Get started</Button>} />
       </Flex>
       <NavbarMenu />
     </Flex>
