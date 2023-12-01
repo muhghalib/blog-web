@@ -1,7 +1,7 @@
 {
 	"extends": ["next/core-web-vitals", "eslint-config-prettier"],
 	"parser": "@typescript-eslint/parser",
-	"plugins": ["@typescript-eslint"],
+	"plugins": ["@typescript-eslint/eslint-plugin"],
 	"rules": {
 		"quotes": ["error", "single"],
 		"@typescript-eslint/consistent-type-imports": "warn",
