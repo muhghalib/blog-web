@@ -70,10 +70,19 @@ const config: Config = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+        'background-move': {
+          from: {
+            backgroundPosition: '0% 100%',
+          },
+          to: {
+            backgroundPosition: '100% 0%',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'background-move': 'background-move 12s ease-out 0s infinite alternate',
       },
     },
   },
