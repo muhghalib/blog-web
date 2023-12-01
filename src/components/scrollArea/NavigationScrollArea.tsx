@@ -70,7 +70,7 @@ export const NavigationScrollArea = ({
         className="cursor-pointer grid place-items-center absolute z-20 left-0 top-0 bottom-0 data-[state=inactive]:hidden"
         onClick={handleOnClickLeft}
       >
-        <ChevronLeft width={20} height={20} className="text-foreground " />
+        <ChevronLeft width={20} height={20} className="text-muted-foreground max-md:hidden" />
       </Box>
       <ScrollAreaViewport ref={scrollViewportRef} onScroll={handleOnScroll}>
         {children}
@@ -80,7 +80,7 @@ export const NavigationScrollArea = ({
         className="cursor-pointer text-foreground grid place-items-center absolute z-20 right-0 top-0 bottom-0 data-[state=inactive]:hidden"
         onClick={handleOnClickRight}
       >
-        <ChevronRight width={20} height={20} className="text-foreground" />
+        <ChevronRight width={20} height={20} className="text-muted-foreground max-md:hidden" />
       </Box>
       <ScrollBar orientation="horizontal" className="hidden" />
     </ScrollArea>
