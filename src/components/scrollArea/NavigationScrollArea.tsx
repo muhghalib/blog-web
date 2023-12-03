@@ -60,7 +60,7 @@ export const NavigationScrollArea = ({
       data-navigation-left={navigationLeft}
       data-navigation-right={navigationRight}
       className={cn(
-        'relative isolate whitespace-nowrap before:content-["_"] before:absolute before:top-0 before:bottom-0 before:left-0 before:block before:h-full before:w-16 before:md:w-40 before:z-10 before:bg-[linear-gradient(270deg,_#fff0_0,_theme("colors.background")_90%,_theme("colors.background"))] data-[navigation-left=inactive]:before:hidden after:content-["_"] after:absolute after:top-0 after:bottom-0 after:right-0 after:block after:h-full after:w-16 after:md:w-40 after:z-10 after:bg-[linear-gradient(90deg,_#fff0_0,_theme("colors.background")_90%,_theme("colors.background"))] data-[navigation-right=inactive]:after:hidden',
+        'relative w-full isolate whitespace-nowrap before:content-["_"] before:absolute before:top-0 before:bottom-0 before:left-0 before:block before:h-full before:w-16 before:md:w-40 before:z-10 before:bg-[linear-gradient(270deg,_#fff0_0,_theme("colors.background")_90%,_theme("colors.background"))] data-[navigation-left=inactive]:before:hidden after:content-["_"] after:absolute after:top-0 after:bottom-0 after:right-0 after:block after:h-full after:w-16 after:md:w-40 after:z-10 after:bg-[linear-gradient(90deg,_#fff0_0,_theme("colors.background")_90%,_theme("colors.background"))] data-[navigation-right=inactive]:after:hidden',
         className,
       )}
       {...props}
@@ -70,7 +70,7 @@ export const NavigationScrollArea = ({
         className="cursor-pointer grid place-items-center absolute z-20 left-0 top-0 bottom-0 data-[state=inactive]:hidden"
         onClick={handleOnClickLeft}
       >
-        <ChevronLeft width={20} height={20} className="text-foreground " />
+        <ChevronLeft width={20} height={20} className="text-muted-foreground max-md:hidden" />
       </Box>
       <ScrollAreaViewport ref={scrollViewportRef} onScroll={handleOnScroll}>
         {children}
@@ -80,7 +80,7 @@ export const NavigationScrollArea = ({
         className="cursor-pointer text-foreground grid place-items-center absolute z-20 right-0 top-0 bottom-0 data-[state=inactive]:hidden"
         onClick={handleOnClickRight}
       >
-        <ChevronRight width={20} height={20} className="text-foreground" />
+        <ChevronRight width={20} height={20} className="text-muted-foreground max-md:hidden" />
       </Box>
       <ScrollBar orientation="horizontal" className="hidden" />
     </ScrollArea>
