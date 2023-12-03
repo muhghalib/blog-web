@@ -1,4 +1,4 @@
-import type { FieldSchemaTypes } from '@/types/utils';
+import type { FieldSchemaTypes } from '@/types/ui';
 
 import * as z from 'zod';
 
@@ -21,25 +21,30 @@ export const REGISTER_FORM_FIELD_SCHEMA: FieldSchemaTypes<typeof REGISTER_FORM_V
       label: 'name',
       type: 'text',
       placeholder: 'your name...',
+      className: 'py-6',
     },
     email: {
       label: 'email',
       type: 'text',
       placeholder: 'your email...',
+      className: 'py-6',
     },
     username: {
       label: 'username',
       type: 'text',
       placeholder: 'your username...',
+      className: 'py-6',
     },
     password: {
       label: 'password',
       type: 'password',
       placeholder: 'your password...',
+      className: 'py-6',
     },
     confirmPassword: {
-      label: 'password',
+      label: 'confirm password',
       type: 'password',
-      placeholder: 'your password...',
+      placeholder: 'confirm your password...',
+      className: 'py-6',
     },
   };
