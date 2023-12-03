@@ -1,10 +1,10 @@
-import { Flex } from '../ui/flex';
-import { Section } from '../ui/section';
-import { Typography } from '../ui/typography';
-import { Card } from '../ui/card';
-import { Grid } from '../ui/grid';
-import { Button } from '../ui/button';
-import { NavigationScrollArea } from '../scrollArea/NavigationScrollArea';
+import { Flex } from '@/components/ui/flex';
+import { Section } from '@/components/ui/section';
+import { Typography } from '@/components/ui/typography';
+import { Card } from '@/components/ui/card';
+import { Grid } from '@/components/ui/grid';
+import { Button } from '@/components/ui/button';
+import { NavigationScrollArea } from '@/components/scrollArea/NavigationScrollArea';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
@@ -20,7 +20,7 @@ export const HeaderSection = () => {
   return (
     <Section>
       <Grid cols={1} md={2} lg={3} className="gap-6">
-        <Card className="w-full h-full flex flex-col max-md:space-y-4 rounded-lg shadow-none border-none">
+        <Card className="flex flex-col w-full h-full border-none rounded-lg shadow-none max-md:space-y-4">
           <Flex direction="col" className="space-y-3">
             <Typography size="3xl" weight="bold">
               Read updated article with{' '}
@@ -67,7 +67,7 @@ export const HeaderSection = () => {
           }}
         >
           <SwiperSlide>
-            <Card className="p-4 w-full h-full rounded-lg shadow-none">
+            <Card className="w-full h-full p-4 rounded-lg shadow-none">
               <Flex className="w-full" justify="between" align="center">
                 <Typography>Popular post</Typography>
                 <Link href="">
@@ -82,7 +82,7 @@ export const HeaderSection = () => {
               >
                 {DUMMY_BLOGS.slice(0, 3).map(({ title, author }, idx) => {
                   return (
-                    <Link key={idx} className="w-full transition-all py-3" href="">
+                    <Link key={idx} className="w-full py-3 transition-all" href="">
                       <Flex key={idx} direction="col">
                         <Typography size="sm">{title}</Typography>
                         <Typography size="xs" weight="regular" color="muted">
@@ -96,7 +96,7 @@ export const HeaderSection = () => {
             </Card>
           </SwiperSlide>
           <SwiperSlide>
-            <Card className="relative w-full h-full p-4 rounded-lg shadow-none flex flex-col space-y-6 items-center justify-center bg-black">
+            <Card className="relative flex flex-col items-center justify-center w-full h-full p-4 space-y-6 bg-black rounded-lg shadow-none">
               <Flex className="space-y-4" direction="col" justify="center" align="center">
                 <Typography size="3xl" weight="semibold" color="white">
                   We&apos;re Hiring!

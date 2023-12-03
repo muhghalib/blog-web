@@ -1,10 +1,10 @@
 'use client';
 
-import { Flex } from '../ui/flex';
-import { Grid } from '../ui/grid';
-import { Section } from '../ui/section';
-import { CategoryTabs } from '../tabs/CategoryTabs';
-import { BlogCard } from '../card/BlogCard';
+import { Flex } from '@/components/ui/flex';
+import { Grid } from '@/components/ui/grid';
+import { Section } from '@/components/ui/section';
+import { CategoryTabs } from '@/components/tabs/CategoryTabs';
+import { BlogCard } from '@/components/card/BlogCard';
 
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
