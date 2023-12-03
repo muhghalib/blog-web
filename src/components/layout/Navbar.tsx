@@ -6,13 +6,12 @@ import { Flex } from '../ui/flex';
 import { Typography } from '../ui/typography';
 import { Search } from 'lucide-react';
 import { Button } from '../ui/button';
-import { LoginModal } from '../modals/LoginModal';
 import { NavbarMenu } from './NavbarMenu';
 import { Separator } from '../ui/separator';
-import { RegisterModal } from '../modals/RegisterModal';
 import { SearchModal } from '../modals/SearchModal';
 
 import { NAVBAR_LINK, NAVBAR_TITLE } from '@/constant/contents/navbar';
+import { APP_LINK } from '@/constant/utils/appLink';
 
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -64,18 +63,16 @@ export const Navbar = () => {
       </Flex>
       <Separator orientation="vertical" className="h-10" />
       <Flex align="center" className="space-x-6 max-md:hidden">
-        <LoginModal trigger={<Button variant="link">Login</Button>} />
-        <RegisterModal
-          trigger={
-            <Button
-              variant="outlined"
-              color="muted"
-              className="data-[variant=outlined]:hover:bg-button data-[variant=outlined]:hover:text-button-foreground"
-            >
-              Get started
-            </Button>
-          }
-        />
+        <Button asChild variant="link">
+          <Link href={APP_LINK.auth.login}>Login</Link>
+        </Button>
+        <Button
+          asChild
+          variant="outlined"
+          className="data-[variant=outlined]:hover:bg-button data-[variant=outlined]:hover:text-button-foreground"
+        >
+          <Link href={APP_LINK.auth.register}>Get started</Link>
+        </Button>
       </Flex>
       <NavbarMenu />
     </Flex>

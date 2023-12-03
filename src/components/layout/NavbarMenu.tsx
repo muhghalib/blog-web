@@ -6,18 +6,18 @@ import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { Flex } from '../ui/flex';
 
 import { Typography } from '../ui/typography';
-import { LoginModal } from '../modals/LoginModal';
 import { Separator } from '../ui/separator';
 import { Button } from '../ui/button';
-import { RegisterModal } from '../modals/RegisterModal';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 
-import { useTheme } from 'next-themes';
 import {
   NAVBAR_MENU_ACCORDION_CONTENT,
   NAVBAR_MENU_SOCIAL,
   NAVBAR_MENU_THEME,
 } from '@/constant/contents/navbarMenu';
+import { APP_LINK } from '@/constant/utils/appLink';
+
+import { useTheme } from 'next-themes';
 
 export const NavbarMenu = () => {
   const { setTheme, theme } = useTheme();
@@ -64,20 +64,16 @@ export const NavbarMenu = () => {
             })}
           </Accordion>
           <Flex align="center" className="w-full space-x-6 md:hidden">
-            <LoginModal
-              trigger={
-                <Button className="w-full" variant="link">
-                  Login
-                </Button>
-              }
-            />
-            <RegisterModal
-              trigger={
-                <Button className="w-full" variant="outlined" color="muted">
-                  Get started
-                </Button>
-              }
-            />
+            <Button asChild className="w-full" variant="link">
+              <Link href={APP_LINK.auth.login}>Login</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outlined"
+              className="w-full data-[variant=outlined]:hover:bg-button data-[variant=outlined]:hover:text-button-foreground"
+            >
+              <Link href={APP_LINK.auth.register}>Get started</Link>
+            </Button>
           </Flex>
           <Separator />
           <Flex className="w-full" align="center" justify="between">
