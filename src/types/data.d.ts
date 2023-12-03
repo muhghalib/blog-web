@@ -32,3 +32,8 @@ type Blog = {
   createdAt: string;
   updatedAt: string;
 };
+
+type SearchHistory = {
+  id: string;
+  query: string;
+};
