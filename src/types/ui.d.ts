@@ -1,8 +1,13 @@
-import type { ReactNode } from 'react';
 import type { ZodObject, infer as ZodInfer, ZodEffects } from 'zod';
-import type { FieldValues, ControllerProps } from 'react-hook-form';
+import type { ControllerProps, FieldValues } from 'react-hook-form';
 
-import { InputProps } from '@/components/ui/input';
+type BaseFieldStateTypes = {
+  label?: string;
+  description?: string;
+  disabled?: boolean;
+  defaultValue?: unknown;
+  className?: string;
+};
 
 type CommonFieldStateTypes = {
   type: 'text' | 'date' | 'email' | 'password';
@@ -24,10 +29,5 @@ type FieldSchemaTypes<
   TFieldSchema extends ZodObject<FieldValues> | ZodEffects<ZodObject<FieldValues>>,
   TInferSchema extends FieldValues = ZodInfer<TFieldSchema>,
 > = {
-  [P in keyof TInferSchema]: {
-    label?: string;
-    description?: string;
-    disabled?: boolean;
-    defaultValue?: unknown;
-  } & FieldStateTypes;
+  [P in keyof TInferSchema]: BaseFieldStateTypes & FieldStateTypes;
 };
