@@ -18,7 +18,7 @@ export const BlogCard = ({
 }: Omit<Blog, 'updatedAt' | 'content'>) => {
   return (
     <Card className="flex flex-col w-full h-full border-none rounded-none shadow-none gap-y-4 bg-none overflow-clip">
-      <CardImage className="relative w-full p-0 aspect-video">
+      <CardImage className="relative w-full p-0 aspect-[4/3] md:aspect-[4/2] rounded-xl overflow-clip">
         <Image src={thumbnail} fill objectFit="cover" alt="random" />
       </CardImage>
       <CardHeader className="p-0 mt-4 mb-auto">
