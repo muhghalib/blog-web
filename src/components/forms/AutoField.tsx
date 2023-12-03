@@ -1,6 +1,6 @@
 import type { infer as ZodInfer } from 'zod';
-import type { Control, ControllerProps } from 'react-hook-form';
-import type { FieldSchemaTypes, FieldStateTypes } from '@/types/utils';
+import type { Control, ControllerProps, FieldValues } from 'react-hook-form';
+import type { BaseFieldStateTypes, FieldSchemaTypes, FieldStateTypes } from '@/types/ui';
 
 import {
   FormControl,
@@ -13,13 +13,19 @@ import {
 import { Input } from '../ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 
-interface AutoFieldProps<TFieldSchema extends FieldSchemaTypes<any>> {
+interface AutoFieldProps<
+  TFieldSchema extends FieldSchemaTypes<any>,
+  TControl extends Control<any>,
+> {
   fieldSchema: TFieldSchema;
-  control: TFieldSchema extends FieldSchemaTypes<infer U> ? Control<ZodInfer<U>> : never;
+  control: TControl;
 }
 
-export const AutoField = <TFieldSchema extends FieldSchemaTypes<any>>(
-  props: AutoFieldProps<TFieldSchema>,
+export const AutoField = <
+  TFieldSchema extends FieldSchemaTypes<any>,
+  TControl extends Control<any>,
+>(
+  props: AutoFieldProps<TFieldSchema, TControl>,
 ) => {
   return (
     <>
@@ -31,15 +37,10 @@ export const AutoField = <TFieldSchema extends FieldSchemaTypes<any>>(
             defaultValue={value.defaultValue}
             disabled={value.disabled}
             control={props.control}
-            render={({ field, fieldState, formState }) => (
+            render={({ field }) => (
               <FormItem className="w-full space-y-1">
                 {value.label && <FormLabel>{value.label}</FormLabel>}
-                <RenderField
-                  field={field}
-                  fieldState={fieldState}
-                  formState={formState}
-                  {...value}
-                />
+                <RenderField field={field} {...value} />
                 {value.description && <FormDescription>{value.description}</FormDescription>}
                 <FormMessage />
               </FormItem>
@@ -51,43 +52,67 @@ export const AutoField = <TFieldSchema extends FieldSchemaTypes<any>>(
   );
 };
 
-const RenderField = <TFieldSchema extends FieldSchemaTypes<any>>(
-  props: Parameters<
-    ControllerProps<TFieldSchema extends FieldSchemaTypes<infer U> ? ZodInfer<U> : never>['render']
-  >['0'] &
-    FieldStateTypes,
+const RenderField = <
+  TFieldSchema extends FieldSchemaTypes<any>,
+  TInferFieldSchema extends FieldValues = TFieldSchema extends FieldSchemaTypes<infer U>
+    ? ZodInfer<U>
+    : never,
+>(
+  props: Pick<Parameters<ControllerProps<TInferFieldSchema>['render']>['0'], 'field'> &
+    FieldStateTypes &
+    Omit<BaseFieldStateTypes, 'defaultValues' | 'disabled'>,
 ) => {
-  const { field, fieldState, formState } = props;
+  const { field } = props;
 
   switch (props.type) {
     case 'text':
       return (
         <FormControl>
-          <Input type={props.type} placeholder={props.placeholder} {...field} />
+          <Input
+            type={props.type}
+            placeholder={props.placeholder}
+            className={props.className}
+            {...field}
+          />
         </FormControl>
       );
     case 'date':
       return (
         <FormControl>
-          <Input type={props.type} placeholder={props.placeholder} {...field} />
+          <Input
+            type={props.type}
+            placeholder={props.placeholder}
+            className={props.className}
+            {...field}
+          />
         </FormControl>
       );
     case 'email':
       return (
         <FormControl>
-          <Input type={props.type} placeholder={props.placeholder} {...field} />
+          <Input
+            type={props.type}
+            placeholder={props.placeholder}
+            className={props.className}
+            {...field}
+          />
         </FormControl>
       );
     case 'password':
       return (
         <FormControl>
-          <Input type={props.type} placeholder={props.placeholder} {...field} />
+          <Input
+            type={props.type}
+            placeholder={props.placeholder}
+            className={props.className}
+            {...field}
+          />
         </FormControl>
       );
     case 'select':
       return (
         <Select name={field.name} onValueChange={field.onChange} defaultValue={field.value}>
-          <FormControl>
+          <FormControl className={props.className}>
             <SelectTrigger>
               <SelectValue placeholder={props.placeholder} />
             </SelectTrigger>
