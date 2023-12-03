@@ -6,20 +6,20 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@utils/classnames';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center text-sm whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       color: {
         default:
-          'data-[variant=filled]:text-foreign-foreground data-[variant=filled]:bg-background data-[variant=outlined]:border-foreign data-[variant=outlined]:border data-[variant=outlined]:hover:bg-background data-[variant=outlined]:hover:text-foreign-foreground data-[variant=link]:text-foreign data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-foreign',
+          'text-button data-[variant=filled]:text-button-foreground data-[variant=filled]:bg-button data-[variant=outlined]:border-button data-[variant=outlined]:border data-[variant=outlined]:hover:bg-button data-[variant=outlined]:hover:text-button-foreground data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-button',
         primary:
-          'data-[variant=filled]:text-primary-foreground data-[variant=filled]:bg-primary data-[variant=outlined]:border-primary data-[variant=outlined]:border data-[variant=outlined]:hover:bg-primary data-[variant=outlined]:hover:text-primary-foreground data-[variant=link]:text-primary data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-primary',
+          'text-primary data-[variant=filled]:text-primary-foreground data-[variant=filled]:bg-primary data-[variant=outlined]:border-primary data-[variant=outlined]:border data-[variant=outlined]:hover:bg-primary data-[variant=outlined]:hover:text-primary-foreground data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-primary',
         destructive:
-          'data-[variant=filled]:text-destructive-foreground data-[variant=filled]:bg-destructive data-[variant=outlined]:border-destructive data-[variant=outlined]:border data-[variant=outlined]:hover:bg-destructive data-[variant=outlined]:hover:text-destructive-foreground data-[variant=link]:text-destructive data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-destructive',
+          'text-destructive data-[variant=filled]:text-destructive-foreground data-[variant=filled]:bg-destructive data-[variant=outlined]:border-destructive data-[variant=outlined]:border data-[variant=outlined]:hover:bg-destructive data-[variant=outlined]:hover:text-destructive-foreground data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-destructive',
         muted:
-          'data-[variant=filled]:text-muted-foreground data-[variant=filled]:bg-muted data-[variant=outlined]:border-muted data-[variant=outlined]:border data-[variant=outlined]:hover:bg-muted data-[variant=outlined]:hover:text-muted-foreground data-[variant=link]:text-muted data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-muted-foreground',
+          'text-muted data-[variant=filled]:text-muted-foreground data-[variant=filled]:bg-muted data-[variant=outlined]:border-muted data-[variant=outlined]:border data-[variant=outlined]:hover:bg-muted data-[variant=outlined]:hover:text-muted-foreground data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-muted-foreground',
         secondary:
-          'data-[variant=filled]:text-secondary-foreground data-[variant=filled]:bg-secondary data-[variant=outlined]:border-secondary data-[variant=outlined]:border data-[variant=outlined]:hover:bg-secondary data-[variant=outlined]:hover:text-secondary-foreground data-[variant=link]:text-secondary data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-secondary',
+          'text-secondary data-[variant=filled]:text-secondary-foreground data-[variant=filled]:bg-secondary data-[variant=outlined]:border-secondary data-[variant=outlined]:border data-[variant=outlined]:hover:bg-secondary data-[variant=outlined]:hover:text-secondary-foreground data-[variant=link]:underline-offset-4 data-[variant=link]:hover:underline data-[variant=link]:text-secondary',
       },
       variant: {
         outlined: '',
@@ -53,7 +53,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         data-variant={variant}
-        className={cn(typographyVariants(), buttonVariants({ variant, size, color, className }))}
+        className={cn(
+          typographyVariants({ weight: 'regular' }),
+          buttonVariants({ variant, size, color }),
+          className,
+        )}
         ref={ref}
         {...props}
       />
