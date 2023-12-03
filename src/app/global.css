@@ -4,23 +4,26 @@
 
 @layer base {
   :root {
+    --swiper-theme-color: hsl(188, 100%, 50%) !important;
+    --swiper-navigation-color: hsl(0 0% 100%);
+
     --background: 0 0% 100%;
-    --foreground: 233, 27%, 13%;
+    --foreground: 210 17% 2%;
 
     --card: 0 0% 100%;
-    --card-foreground: 233 27% 13%;
+    --card-foreground: 210 17% 2%;
 
     --blockquote: 240 6% 97%;
-    --blockquote-foreground: 233 27% 13%;
+    --blockquote-foreground: 210 17% 2%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 233 27% 13%;
+    --popover-foreground: 210 17% 2%;
 
-    --primary: 229 96% 64%;
+    --primary: 188 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 176 100% 47%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 310 100% 50%;
+    --secondary-foreground: 210 17% 2%;
 
     --muted: 240 6% 97%;
     --muted-foreground: 235 5% 44%;
@@ -33,28 +36,31 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 229 96% 64%;
+    --ring: 210 17% 2%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 233 27% 13%;
+    --swiper-theme-color: hsl(188, 100%, 50%) !important;
+    --swiper-navigation-color: hsl(0 0% 100%);
+
+    --background: 210 17% 2%;
     --foreground: 0 0% 100%;
 
-    --card: 233 27% 13%;
+    --card: 210 17% 2%;
     --card-foreground: 210 40% 98%;
 
     --blockquote: 236 19% 17%;
     --blockquote-foreground: 0 0% 100%;
 
-    --popover: 233 27% 13%;
+    --popover: 210 17% 2%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 229 96% 64%;
+    --primary: 188 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 176 100% 47%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 310 100% 50%;
+    --secondary-foreground: 210 17% 2%;
 
     --muted: 233 29% 11%;
     --muted-foreground: 233 4% 61%;
@@ -67,7 +73,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 229 96% 64%;
+    --ring: 210 17% 2%;
     --radius: 0.5rem;
   }
 }
@@ -76,7 +82,31 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer swiper {
+  .swiper {
+    @apply w-full h-full;
+  }
+
+  .swiper-slide {
+    @apply text-center bg-background flex items-center justify-center;
+  }
+
+  .swiper-slide img {
+    @apply block w-full h-full object-cover bg-no-repeat bg-center;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply [--swiper-navigation-size:18px] bg-muted-foreground/60 rounded-full p-4 grid place-items-center;
+  }
+
+  .swiper-button-disabled {
+    @apply !hidden;
   }
 }
