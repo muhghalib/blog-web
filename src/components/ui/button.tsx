@@ -52,7 +52,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : 'button';
     return (
       <Comp
-        data-variant={variant}
+        data-variant={variant || 'filled'}
         className={cn(
           typographyVariants({ weight: 'regular' }),
           buttonVariants({ variant, size, color }),
