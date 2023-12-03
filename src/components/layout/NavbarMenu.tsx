@@ -73,7 +73,7 @@ export const NavbarMenu = () => {
             />
             <RegisterModal
               trigger={
-                <Button className="w-full" variant="outlined">
+                <Button className="w-full" variant="outlined" color="muted">
                   Get started
                 </Button>
               }
@@ -95,19 +95,16 @@ export const NavbarMenu = () => {
             <Flex className="space-x-2" align="center">
               {NAVBAR_MENU_THEME.map(({ icon, value }, idx) => {
                 const Icon = icon;
+
                 return (
                   <Button
                     key={idx}
-                    variant={theme == value ? 'filled' : 'outlined'}
-                    color={theme == value ? 'primary' : 'default'}
+                    variant={theme === value ? 'filled' : 'outlined'}
+                    color={theme === value ? 'default' : 'muted'}
                     className="p-0 w-7 h-7"
                     onClick={() => changeTheme(value)}
                   >
-                    <Icon
-                      width={18}
-                      height={18}
-                      className={theme == value ? 'text-white' : 'text-muted-foreground'}
-                    />
+                    <Icon width={18} height={18} />
                   </Button>
                 );
               })}
