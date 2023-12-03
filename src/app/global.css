@@ -13,6 +13,9 @@
     --card: 0 0% 100%;
     --card-foreground: 210 17% 2%;
 
+    --button: 210 17% 2%;
+    --button-foreground: 0 0% 100%;
+
     --blockquote: 240 6% 97%;
     --blockquote-foreground: 210 17% 2%;
 
@@ -25,8 +28,8 @@
     --secondary: 310 100% 50%;
     --secondary-foreground: 210 17% 2%;
 
-    --muted: 240 6% 97%;
-    --muted-foreground: 235 5% 44%;
+    --muted: 216 12% 84%;
+    --muted-foreground: 220 9% 46%;
 
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
@@ -50,6 +53,9 @@
     --card: 210 17% 2%;
     --card-foreground: 210 40% 98%;
 
+    --button: 0 0% 100%;
+    --button-foreground: 210 17% 2%;
+
     --blockquote: 236 19% 17%;
     --blockquote-foreground: 0 0% 100%;
 
@@ -62,7 +68,7 @@
     --secondary: 310 100% 50%;
     --secondary-foreground: 210 17% 2%;
 
-    --muted: 233 29% 11%;
+    --muted: 217 19% 27%;
     --muted-foreground: 233 4% 61%;
 
     --accent: 217.2 32.6% 17.5%;

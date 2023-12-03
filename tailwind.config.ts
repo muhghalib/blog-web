@@ -51,6 +51,10 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        button: {
+          DEFAULT: 'hsl(var(--button))',
+          foreground: 'hsl(var(--button-foreground))',
+        },
         blockquote: {
           DEFAULT: 'hsl(var(--blockquote))',
           foreground: 'hsl(var(--blockquote-foreground))',
