@@ -5,18 +5,18 @@ import { Separator } from '@/components/ui/separator';
 import { Flex } from '@/components/ui/flex';
 import { Sidebar } from '@/components/layout/Sidebar';
 
-import { HeaderSection } from '@/components/home/HeaderSection';
-import { BlogListSection } from '@/components/home/BlogListSection';
+import { HeaderSection } from '@/components/pages/home/HeaderSection';
+import { BlogListSection } from '@/components/pages/home/BlogListSection';
 
 export default function HomePage() {
   return (
-    <Main className="flex flex-col px-6 mt-8 mb-24 space-y-10 md:px-12">
+    <>
       <HeaderSection />
       <Separator />
       <Flex>
         <Sidebar />
         <BlogListSection />
       </Flex>
-    </Main>
+    </>
   );
 }
