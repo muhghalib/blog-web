@@ -7,7 +7,7 @@ import { Typography } from '../ui/typography';
 
 import { SIDEBAR_ABOUT } from '@/constant/contents/sidebar';
 
-export const Sidebar = () => {
+export const InfoSidebar = () => {
   return (
     <Aside className="hidden w-full max-w-[16rem] lg:max-w-xs pr-6 md:block">
       <Flex direction="col" className="space-y-4">
@@ -20,9 +20,7 @@ export const Sidebar = () => {
           </CardHeader>
           <CardContent className="space-y-4">
             <Input placeholder="Your email..." />
-            <Button color="primary" variant="filled">
-              Subscribe
-            </Button>
+            <Button variant="filled">Subscribe</Button>
           </CardContent>
         </Card>
         <Typography size="sm" weight="light">
