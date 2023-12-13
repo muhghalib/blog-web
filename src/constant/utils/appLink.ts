@@ -4,4 +4,5 @@ export const APP_LINK = {
     login: '/auth/login',
     register: '/auth/register',
   },
+  search: '/search',
 };

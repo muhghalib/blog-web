@@ -1,22 +1,21 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
 import { CommandDialog, CommandInput, CommandList, CommandEmpty, CommandItem } from '../ui/command';
-import { Box } from '../ui/box';
-
-import { useEffect, useState } from 'react';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
-
-import { cn } from '@/utils/classnames';
 import { Slot } from '@radix-ui/react-slot';
-import { useCreateQueryString } from '@/hooks/useCreateQueryString';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import crypto from 'crypto';
 import { Flex } from '../ui/flex';
 import { Typography } from '../ui/typography';
 import { NavigationScrollArea } from '../scrollArea/NavigationScrollArea';
 import { Button } from '../ui/button';
-import Link from 'next/link';
+
 import { DUMMY_CATEGORIES } from '@/constant/dummy/categories';
+import { APP_LINK } from '@/constant/utils/appLink';
+import { cn } from '@/utils/classnames';
+import crypto from 'crypto';
+
+import { useEffect, useState } from 'react';
+import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { useCreateQueryString } from '@/hooks/useCreateQueryString';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export interface SearchModalProps extends ComponentPropsWithoutRef<typeof CommandInput> {
   trigger: JSX.Element;
@@ -57,7 +56,7 @@ export const SearchModal = ({ className, trigger, ...props }: SearchModalProps) 
 
       setIsOpen(false);
 
-      return router.push(`${pathname}?${query}`);
+      return router.push(`${APP_LINK.search}?${query}`);
     }
   };
 
@@ -66,7 +65,7 @@ export const SearchModal = ({ className, trigger, ...props }: SearchModalProps) 
 
     setIsOpen(false);
 
-    return router.push(`${pathname}?${query}`);
+    return router.push(`${APP_LINK.search}?${query}`);
   };
 
   return (

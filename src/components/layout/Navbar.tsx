@@ -32,7 +32,7 @@ export const Navbar = () => {
         <SearchModal
           trigger={
             <Button
-              className="items-center justify-start max-w-md ml-auto space-x-3 border rounded-full max-sm:text-foreground max-sm:border-none sm:px-3 sm:w-full sm:ml-6"
+              className="items-center justify-start max-w-md ml-auto space-x-3 border rounded-full max-sm:text-foreground max-sm:border-none max-sm:h-8 max-sm:w-8 max-sm:p-0 max-sm:justify-center sm:px-3 sm:w-full sm:ml-6"
               variant="outlined"
               color="muted"
             >

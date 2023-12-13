@@ -1,16 +1,12 @@
+import { BlogCard } from '@/components/card/BlogCard';
 import { Grid } from '@/components/ui/grid';
 import { Section } from '@/components/ui/section';
-import { BlogCard } from '@/components/card/BlogCard';
 
-import { DUMMY_BLOGS } from '@/constant/dummy/blogs';
-import { InfoSidebar } from '@/components/layout/InfoSidebar';
-
-export const BlogListSection = () => {
+export const SearchResultList = ({ blogData }: { blogData: Blog[] }) => {
   return (
     <Section className="flex">
-      <InfoSidebar />
-      <Grid className="flex-1 w-full gap-8" cols={1} sm={2}>
-        {DUMMY_BLOGS.map(({ id, author, thumbnail, categories, description, title, createdAt }) => {
+      <Grid className="w-full gap-8" cols={1} sm={2} md={3}>
+        {blogData.map(({ id, author, thumbnail, categories, description, title, createdAt }) => {
           return (
             <BlogCard
               key={id}
