@@ -9,7 +9,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'A deep dive into the world of technology.',
     author: DUMMY_AUTHORS[0],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-01',
     updatedAt: '2023-01-01',
   },
@@ -20,7 +32,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Embark on a journey to unexplored destinations.',
     author: DUMMY_AUTHORS[1],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-02',
     updatedAt: '2023-01-02',
   },
@@ -32,7 +56,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Exploring the potential impact of AI on society.',
     author: DUMMY_AUTHORS[0],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-03',
     updatedAt: '2023-01-03',
   },
@@ -43,7 +79,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Tasting exotic dishes from various cultures.',
     author: DUMMY_AUTHORS[1],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-04',
     updatedAt: '2023-01-04',
   },
@@ -54,7 +102,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Examining eco-friendly solutions in technology.',
     author: DUMMY_AUTHORS[0],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-05',
     updatedAt: '2023-01-05',
   },
@@ -65,7 +125,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Immersive experiences in the virtual world.',
     author: DUMMY_AUTHORS[1],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-06',
     updatedAt: '2023-01-06',
   },
@@ -76,7 +148,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Capturing breathtaking moments in the great outdoors.',
     author: DUMMY_AUTHORS[0],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-07',
     updatedAt: '2023-01-07',
   },
@@ -87,7 +171,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Tips for thriving in a remote work environment.',
     author: DUMMY_AUTHORS[1],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-08',
     updatedAt: '2023-01-08',
   },
@@ -98,7 +194,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Journeying through the cosmos and beyond.',
     author: DUMMY_AUTHORS[0],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-09',
     updatedAt: '2023-01-09',
   },
@@ -109,7 +217,19 @@ export const DUMMY_BLOGS: Blog[] = [
     description: 'Celebrating diversity through festive traditions.',
     author: DUMMY_AUTHORS[1],
     categories: DUMMY_CATEGORIES.slice(0, Math.ceil(Math.random() * DUMMY_CATEGORIES.length - 1)),
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: `
+     <p>Welcome to our blog post on the latest technologies! In this article, we will take a closer look at the cutting-edge advancements shaping our future.</p>
+      
+      <h2>The Technological Landscape</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
+      
+      <h2>Emerging Trends</h2>
+      <p>Curabitur blandit tempus porttitor. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</p>
+      
+      <h2>Impact on Society</h2>
+      <p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat.</p>
+      
+      <p>Stay tuned as we embark on this exciting journey through the realm of technology!</p>`,
     createdAt: '2023-01-10',
     updatedAt: '2023-01-10',
   },
