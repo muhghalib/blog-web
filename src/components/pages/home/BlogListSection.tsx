@@ -7,10 +7,10 @@ import { InfoSidebar } from '@/components/layout/InfoSidebar';
 
 export const BlogListSection = () => {
   return (
-    <Section className="flex">
+    <Section className="flex justify-evenly">
       <InfoSidebar />
       <Grid className="flex-1 w-full gap-8" cols={1} sm={2}>
-        {DUMMY_BLOGS.map(({ id, author, thumbnail, categories, description, title, createdAt }) => {
+        {DUMMY_BLOGS.map(({ id, author, thumbnail, categories, title, content, createdAt }) => {
           return (
             <BlogCard
               key={id}
@@ -19,7 +19,7 @@ export const BlogListSection = () => {
               thumbnail={thumbnail}
               categories={categories}
               title={title}
-              description={description}
+              content={content}
               createdAt={createdAt}
             />
           );
