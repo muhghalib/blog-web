@@ -20,24 +20,20 @@ export default function SearchPage() {
     setBlogData(DUMMY_BLOGS.filter((item) => item.title.includes(searchQuery)));
   }, [searchQuery]);
 
-  return (
+  return blogData.length > 0 ? (
     <>
-      {blogData.length > 0 ? (
-        <>
-          <SearchResultHeader />
-          <SearchResultList blogData={blogData} />
-        </>
-      ) : (
-        <Flex direction="col" className="w-full space-y-3" justify="center" align="center">
-          <XSquare width={96} height={96} className="text-foreground" />
-          <Typography size="4xl" weight="bold">
-            Oops sorry
-          </Typography>
-          <Typography align="center" size="sm">
-            We cannot find a post of what you searching for, try to search another post
-          </Typography>
-        </Flex>
-      )}
+      <SearchResultHeader />
+      <SearchResultList blogData={blogData} />
     </>
+  ) : (
+    <Flex direction="col" className="w-full space-y-3" justify="center" align="center">
+      <XSquare width={96} height={96} className="text-foreground" />
+      <Typography size="4xl" weight="bold">
+        Oops sorry
+      </Typography>
+      <Typography align="center" size="sm">
+        We cannot find a post of what you searching for, try to search another post
+      </Typography>
+    </Flex>
   );
 }
